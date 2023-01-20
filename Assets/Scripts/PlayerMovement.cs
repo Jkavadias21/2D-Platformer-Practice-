@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         dirX = Input.GetAxisRaw("Horizontal");
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
@@ -46,17 +45,20 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState state;
 
-        if(dirX > 0f) {
+        if(dirX > 0f) 
+        {
             state = MovementState.running;
             sprite.flipX = false;
         }
 
-        else if(dirX < 0f) {
+        else if(dirX < 0f) 
+        {
             state = MovementState.running;
             sprite.flipX = true;
         }
 
-        else {
+        else 
+        {
             state = MovementState.idle;
         }
 
@@ -78,4 +80,6 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
     }
+
+    //adding comment to test git push
 }
